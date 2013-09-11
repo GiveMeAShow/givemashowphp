@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/main.css" type="text/css">
+        <title>Give me a show !</title>
+        <link href="http://vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
+        <script src="http://vjs.zencdn.net/4.1/video.js"></script>
+        <script src="javascript/javascript.js"></script>
+    </head>
+
+    <body>
+        <div id="videoPlayer">
+            <div id="videoTitle">
+                
+            </div>
+            <video id="videoClip" class="video-js vjs-default-skin"
+                   controls preload="auto" width="640" height="360"
+                   data-setup='{"example_option":true}'>
+                <source src="http://127.0.0.1/testSite/videos/small.ogv" type="video/ogg" />
+            </video>
+        </div>
+
+
+        <script type="text/javascript" language="javascript">
+            var videoPlayer = videojs("videoClip");
+            videoPlayer.on("ended", changeVideo);
+
+            function changeVideo() {
+                var xhr_object = null;
+                if (window.XMLHttpRequest) // Firefox 
+                    xhr_object = new XMLHttpRequest();
+                else if (window.ActiveXObject) // Internet Explorer 
+                    xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
+                xhr_object.open("GET", "http://127.0.0.1/testSite/php/GetAVideo.php", false);
+                xhr_object.send();
+                videoPlayer.src(xhr_object.responseText);
+                videoPlayer.currentTime(0);
+                videoPlayer.play();
+                document.getElementById("videoTitle").innerHTML = xhr_object.responseText;
+                return false;
+            }
+            ;
+        </script>
+    </body>
+</html>
