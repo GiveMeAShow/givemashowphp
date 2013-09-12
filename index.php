@@ -13,11 +13,19 @@
 
     <body>
         <div id="header">
+            <div id="header_top">
+            </div>
             <div id="header_title_page">
                 Give me a show !
             </div>
         </div>
 
+        <div id="showChooser">
+            Choose your show.
+            <?php 
+                include("php/GenerateThumbs.php");
+            ?>
+        </div>
 
         <div id="videoPlayer">
             <div id="videoTitle">
