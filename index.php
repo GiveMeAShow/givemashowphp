@@ -37,7 +37,7 @@
         </div>
 
         <div id="footer">
-            <div id="footer_content_area"></div>
+            <div id="footer_content_area"><a href="http://givemeasong.net/">Go to : Give me a song!</a></div>
         </div>
 
         <script type="text/javascript" language="javascript">

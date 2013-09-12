@@ -7,8 +7,9 @@
         {
             //echo $dirname."\\".$file;
             echo "<div id=\"showBox\">";
-            echo "miam!";
-            echo "</div>";
+            echo "<a href=\" \">";
+            echo "<img src=\"http://127.0.0.1/testSite/videos/$file/front.jpg\" onclick=\"\" />";
+            echo "</a></div>";
         }
     }
     closedir($dir);
