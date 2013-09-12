@@ -17,14 +17,6 @@ a
 }
 
 
-#videoPlayer
-{
-    margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 640px;
-}
-
 #footer_content_area
 {
 
@@ -55,4 +47,28 @@ a
 
 #header_top{
     height:35px;
+}
+
+#mainContent
+{
+    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+}
+
+#showChooser
+{
+    width:150px;
+    margin-right:10px;
+}
+
+#showBox
+{
+    margin-top: 5px;
+}
+
+#videoPlayer
+{
+    margin-left: 160px;
+    width: 640px;
 }

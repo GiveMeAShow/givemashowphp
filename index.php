@@ -19,25 +19,37 @@
                 Give me a show !
             </div>
         </div>
+        <div id="mainContent">
+        <table>
+            <tr>
+                <td>
+                    <div id="showChooser">
+                        Choose your show.
+                        <?php 
+                            include("php/GenerateThumbs.php");
+                        ?>
+                    </div>
+                </td>
+                <td>
+                        <div id="videoTitle">
+                            
+                        </div>
+                        <video id="videoClip" class="video-js vjs-default-skin"
+                               controls preload="auto" width="640" height="360">
+                        </video>
+                    </div>
+                </td>
+            </tr>
+        </table> 
+            
 
-        <div id="showChooser">
-            Choose your show.
-            <?php 
-                include("php/GenerateThumbs.php");
-            ?>
-        </div>
 
-        <div id="videoPlayer">
-            <div id="videoTitle">
-                
-            </div>
-            <video id="videoClip" class="video-js vjs-default-skin"
-                   controls preload="auto" width="640" height="360">
-            </video>
         </div>
 
         <div id="footer">
-            <div id="footer_content_area"><a href="http://givemeasong.net/">Go to : Give me a song!</a></div>
+            <div id="footer_content_area">
+                <a href="http://givemeasong.net/">Go to : Give me a song!</a>
+            </div>
         </div>
 
         <script type="text/javascript" language="javascript">

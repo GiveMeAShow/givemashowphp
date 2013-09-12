@@ -5,7 +5,6 @@
     while($file = readdir($dir)) {
         if($file != '.' && $file != '..' && is_dir($dirname."\\".$file))
         {
-            //echo $dirname."\\".$file;
             echo "<div id=\"showBox\">";
             echo "<a href=\" \">";
             echo "<img src=\"http://127.0.0.1/testSite/videos/$file/front.jpg\" onclick=\"\" />";
