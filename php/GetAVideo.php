@@ -4,15 +4,15 @@
     $files = array();
 
     $dir = opendir($dirname);
+    if (count($_GET) > 0)
+    {
+        $folders=$_GET['folders'];
 
-    //$id=$_GET['id'];
-   // $niceuh=$_GET['niceuh'];
-
-   // echo "id=$id and niceuh=$niceuh";
+        echo "folders=$folders";
+    }
     while($file = readdir($dir)) {
-        if($file != '.' && $file != '..' && !is_dir($dirname.$file))
+        if($file != '.' && $file != '..' && (pathinfo($file, PATHINFO_EXTENSION) == "ogv"))
         {
-            console.log("ta maman");
             $files[] = $file;
         }
     }

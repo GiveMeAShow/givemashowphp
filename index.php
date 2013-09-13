@@ -20,30 +20,27 @@
             </div>
         </div>
         <div id="mainContent">
-        <table>
-            <tr>
-                <td>
-                    <div id="showChooser">
-                        Choose your show.
-                        <?php 
-                            include("php/GenerateThumbs.php");
-                        ?>
-                    </div>
-                </td>
-                <td>
-                        <div id="videoTitle">
-                            
+            <table>
+                <tr>
+                    <td>
+                        <div id="showChooser">
+                            Choose your show.
+                            <?php 
+                                include("php/GenerateThumbs.php");
+                            ?>
                         </div>
-                        <video id="videoClip" class="video-js vjs-default-skin"
-                               controls preload="auto" width="640" height="360">
-                        </video>
-                    </div>
-                </td>
-            </tr>
-        </table> 
-            
-
-
+                    </td>
+                    <td>
+                            <div id="videoTitle">
+                                
+                            </div>
+                            <video id="videoClip" class="video-js vjs-default-skin"
+                                   controls preload="auto" width="640" height="360">
+                            </video>
+                        </div>
+                    </td>
+                </tr>
+            </table> 
         </div>
 
         <div id="footer">
@@ -54,9 +51,9 @@
 
         <script type="text/javascript" language="javascript">
             var videoPlayer = videojs("videoClip");
-            var path="all";
+            var path = new Array();
             videoPlayer.on("ended", changeVideo);
-            changeVideo();
+            changeVideo(path);
         </script>
     </body>
 </html>
