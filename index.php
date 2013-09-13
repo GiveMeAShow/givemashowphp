@@ -32,7 +32,6 @@
                     </td>
                     <td>
                             <div id="videoTitle">
-                                
                             </div>
                             <video id="videoClip" class="video-js vjs-default-skin"
                                    controls preload="auto" width="640" height="360">
@@ -53,7 +52,8 @@
             var videoPlayer = videojs("videoClip");
             var path = new Array();
             videoPlayer.on("ended", changeVideo);
-            changeVideo(path);
+            changeVideo();
+            console.log("path:", path);
         </script>
     </body>
 </html>

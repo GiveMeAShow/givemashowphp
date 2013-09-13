@@ -7,9 +7,8 @@
     if (count($_GET) > 0)
     {
         $folders=$_GET['folders'];
-
-        echo "folders=$folders";
     }
+    //use join to get the paths.
     while($file = readdir($dir)) {
         if($file != '.' && $file != '..' && (pathinfo($file, PATHINFO_EXTENSION) == "ogv"))
         {
