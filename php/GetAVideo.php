@@ -5,10 +5,15 @@
 
     $dir = opendir($dirname);
 
+    //$id=$_GET['id'];
+   // $niceuh=$_GET['niceuh'];
+
+   // echo "id=$id and niceuh=$niceuh";
     while($file = readdir($dir)) {
         if($file != '.' && $file != '..' && !is_dir($dirname.$file))
         {
-                $files[] = $file;
+            console.log("ta maman");
+            $files[] = $file;
         }
     }
 

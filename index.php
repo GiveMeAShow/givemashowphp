@@ -54,6 +54,7 @@
 
         <script type="text/javascript" language="javascript">
             var videoPlayer = videojs("videoClip");
+            var path="all";
             videoPlayer.on("ended", changeVideo);
             changeVideo();
         </script>
