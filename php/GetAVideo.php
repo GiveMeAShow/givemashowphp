@@ -8,38 +8,45 @@
     {
         $folders=explode(";", $_GET['folders']);
         foreach ($folders as $videoFolder) {
-            fillVideoList($videoFolder, $videoList);
+			$fullPath = $dirname."/".$videoFolder;
+			echo "Visiting $fullpath";
+            $videoList = fillVideoList($fullPath, $videoList);
         }
     }
     else
     {
-        while($file = readdir($dir)) {
-            if($file != '.' && $file != '..' && (pathinfo($file, PATHINFO_EXTENSION) == "ogv"))
-            {
-                $videoList[] = $file;
-            }
-        }
+        $videoList = fillVideoList($dirname, $videoList);
     }
     //use join to get the paths.
 
     closedir($dir);
-
-    echo "http://127.0.0.1/testSite/videos/".$videoList[rand(0, count($videoList) - 1)];
+    $choosenOne = $videoList[rand(0, count($videoList) - 1)];
+    $choosenOne = str_replace("../videos/","", $choosenOne);
+    echo "http://ogdabou.com/videos/".$choosenOne;
 ?>
 
 <?php
     // Fill the videoList with the given folder. Also visit subdirectories.
+
     function fillVideoList($folder, $videoList)
     {
-        while($file = readdir($folder)) {
-            if($file != '.' && $file != '..' && (pathinfo($file, PATHINFO_EXTENSION) == "ogv"))
-            {
-                $videoList[] = $file;
-            }
-            else if (is_dir($file))
-            {
-                fillVideoList($file, $videoList)
-            }
+        
+        $path = $folder;
+        $folder = opendir($folder);
+        while($file = readdir($folder)) { 
+                if($file != '.' && $file != '..')
+                {
+                        $fullPath = "$path/$file";
+                        if (is_dir($fullPath))
+                        {
+                                $videoList = fillVideoList($fullPath, $videoList);
+                        }
+                        else if(pathinfo($fullPath, PATHINFO_EXTENSION) == "webm")
+                        {
+                                $videoList[] = $fullPath;
+                        }
+                }    
         }
+        return $videoList;  
     }
 ?>

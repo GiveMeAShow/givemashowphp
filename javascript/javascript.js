@@ -7,7 +7,7 @@ function changeVideo()
         xhr_object = new XMLHttpRequest();
     else if (window.ActiveXObject) // Internet Explorer 
         xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
-    var request = "http://127.0.0.1/testSite/php/GetAVideo.php";
+    var request = "http://ogdabou.com/php/GetAVideo.php";
 
     if (path.length > 0)
     {
