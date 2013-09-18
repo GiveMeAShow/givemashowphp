@@ -9,6 +9,7 @@
         <link href="http://vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
         <script src="http://vjs.zencdn.net/4.1/video.js"></script>
         <script src="javascript/javascript.js"></script>
+        <script src="javascript/keyListener.js"></script>
     </head>
 
     <body>
@@ -39,7 +40,7 @@
                         </div>
                     </td>
                 </tr>
-            </table> 
+            </table>
         </div>
 
         <div id="footer">
@@ -48,6 +49,7 @@
             </div>
         </div>
         <script type="text/javascript" language="javascript">
+            document.onkeydown = changeOnKeyDown;
             var videoPlayer = videojs("videoClip");
             var path = new Array();
             videoPlayer.on("ended", changeVideo);
