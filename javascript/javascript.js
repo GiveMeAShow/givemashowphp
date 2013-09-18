@@ -23,7 +23,10 @@ function changeVideo()
     console.log("response: ", xhr_object.responseText);
     videoPlayer.src({type: "video/webm", src: xhr_object.responseText});
     videoPlayer.currentTime(0);
-    videoPlayer.play();
+    videoPlayer.ready(function(){
+        var vp = this;
+        vp.play();
+    })
     processTitle(xhr_object.responseText);
     //document.getElementById("videoTitle").innerHTML = xhr_object.responseText;
     return false;

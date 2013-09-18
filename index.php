@@ -8,8 +8,10 @@
         <title>Give me a show !</title>
         <link href="http://vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
         <script src="http://vjs.zencdn.net/4.1/video.js"></script>
-        <script src="javascript/javascript.js"></script>
-        <script src="javascript/keyListener.js"></script>
+        <script type="text/javascript" src="javascript/javascript.js"></script>
+        <script type="text/javascript" src="javascript/keyListener.js"></script>
+        <script type="text/javascript" src="javascript/annyang.min.js"></script>
+        <script type="text/javascript" src="javascript/haveFunWithMe.js"></script>
     </head>
 
     <body>
@@ -56,6 +58,7 @@
             videoPlayer.on("error", changeVideo);
             changeVideo();
             console.log("path:", path);
+            oralFun();
         </script>
     </body>
 </html>
