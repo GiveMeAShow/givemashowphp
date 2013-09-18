@@ -9,6 +9,10 @@ function changeOnKeyDown(_event_)
 	{
 		changeVideo();
 	}
+	else if (keyCode == KEY_LEFT)
+	{
+		changeToPreviousVideo();
+	}
 }
 
 function checkEventObj ( _event_ ){

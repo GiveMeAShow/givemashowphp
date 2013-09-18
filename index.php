@@ -53,6 +53,7 @@
         <script type="text/javascript" language="javascript">
             document.onkeydown = changeOnKeyDown;
             var videoPlayer = videojs("videoClip");
+            var videosHystory = null;;
             var path = new Array();
             videoPlayer.on("ended", changeVideo);
             videoPlayer.on("error", changeVideo);

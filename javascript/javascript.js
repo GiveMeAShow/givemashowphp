@@ -1,6 +1,7 @@
 function changeVideo() 
 {
-    console.log("changeVideo path:", path);
+    addVideoToHistory(document.getElementById("videoClip_html5_api").getAttribute("src"));
+    //currentVideo = videoPlayer.src();
     var xhr_object = null;
     if (window.XMLHttpRequest) // Firefox 
         xhr_object = new XMLHttpRequest();
@@ -31,6 +32,39 @@ function changeVideo()
     //document.getElementById("videoTitle").innerHTML = xhr_object.responseText;
     return false;
 };
+
+function changeToPreviousVideo()
+{
+    if (videosHystory != null)
+    {
+        var previousVideo = videosHystory.pop();
+        videoPlayer.src({type: "video/webm", src:  previousVideo});
+        videoPlayer.currentTime(0);
+        videoPlayer.ready(function(){
+            var vp = this;
+            vp.play();
+        })
+        processTitle(previousVideo);
+    }
+    else
+    {
+        console.log("This is your first video.. maybe you should TRY THE NEXT ONE !");
+    }
+}
+
+function addVideoToHistory(videoPath)
+{
+    if (videosHystory == null)
+    {
+        videosHystory = new Array();
+        videosHystory.push(videoPath);
+    }
+    else
+    {
+        videosHystory.push(videoPath);
+    }
+    console.log("History +1 : ", videoPath);
+}
 
 function managePath(folderName, id) 
 {
