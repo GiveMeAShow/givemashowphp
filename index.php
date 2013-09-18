@@ -47,12 +47,6 @@
                 <a href="http://givemeasong.net/">Go to : Give me a song!</a>
             </div>
         </div>
-
-        <div id="customController">
-            <div id="controller">
-                bonjour
-            </div>
-        </div>
         <script type="text/javascript" language="javascript">
             var videoPlayer = videojs("videoClip");
             var path = new Array();
