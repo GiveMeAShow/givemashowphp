@@ -52,6 +52,7 @@
             var videoPlayer = videojs("videoClip");
             var path = new Array();
             videoPlayer.on("ended", changeVideo);
+            videoPlayer.on("error", changeVideo);
             changeVideo();
             console.log("path:", path);
         </script>
