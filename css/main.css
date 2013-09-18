@@ -60,7 +60,7 @@ a
 {
     width:150px;
     margin-right:10px;
-    color: white;
+    color: lightgrey;
 }
 
 .showBox_visible
@@ -89,4 +89,25 @@ a
 #showBox_hidden
 {
     opacity: 0.5;
+}
+
+#videoTitle
+{
+    color: lightgray;
+}
+
+#customController
+{
+    bottom: 0px;
+    height : 30px;
+    width: 100%;
+    background-color: #212121;
+    color: lightgray;
+    box-shadow: 0px 0px 5px #000;
+    position:fixed;
+}
+
+#controller
+{
+    text-align: center;
 }

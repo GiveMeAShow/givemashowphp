@@ -31,7 +31,7 @@
                         </div>
                     </td>
                     <td>
-                            <div id="videoTitle">
+                        <div id="videoTitle">
                             </div>
                             <video id="videoClip" class="video-js vjs-default-skin"
                                    controls preload="auto" width="640" height="360">
@@ -48,6 +48,11 @@
             </div>
         </div>
 
+        <div id="customController">
+            <div id="controller">
+                bonjour
+            </div>
+        </div>
         <script type="text/javascript" language="javascript">
             var videoPlayer = videojs("videoClip");
             var path = new Array();
