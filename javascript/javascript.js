@@ -7,7 +7,7 @@ function changeVideo()
         xhr_object = new XMLHttpRequest();
     else if (window.ActiveXObject) // Internet Explorer 
         xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
-    var request = "/php/GetAVideo.php";
+    var request = "php/GetAVideo.php";
 
     if (path.length > 0)
     {
@@ -18,10 +18,10 @@ function changeVideo()
             request = request + path[i] + ";";
         }
     }
-    //console.log("request: ", request);
+    console.log("request: ", request);
     xhr_object.open("GET", request, false);
     xhr_object.send();
-    //console.log("response: ", xhr_object.responseText);
+    console.log("response: ", xhr_object.responseText);
     videoPlayer.src({type: "video/webm", src: xhr_object.responseText});
     videoPlayer.currentTime(0);
     videoPlayer.ready(function(){
@@ -96,4 +96,18 @@ function processTitle(fullpath)
     fullVideoName = fullVideoName.replace(".webm", "");
     fullVideoName = fullVideoName.split("_").join(" ");
     document.getElementById("videoTitle").innerHTML = fullVideoName;
+}
+
+function expandFooter()
+{
+    console.log("Expanding footer");
+    $(".footer").switchClass("footer", "footer_expanded", 1000);
+    $("#footer_up_arrow").attr("onClick", "minimizeFooter();")
+}
+
+function minimizeFooter()
+{
+    console.log("Minimizing footer");
+    $(".footer_expanded").switchClass("footer_expanded", "footer", 1000);
+    $("#footer_up_arrow").attr("onClick", "expandFooter();")
 }

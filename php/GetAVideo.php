@@ -4,7 +4,6 @@
     $videoList = array();
 
     $dir = opendir($dirname);
-    //echo count($_GET);
     if (count($_GET) > 0)
     {
         $folders = explode(";", $_GET['folders']);
@@ -26,7 +25,7 @@
     $choosenOne = $videoList[rand(0, count($videoList) - 1)];
     $choosenOne = str_replace("../videos/","", $choosenOne);
     $choosenOne = str_replace(" ","", $choosenOne);
-    echo "http://ogdabou.com/videos/".$choosenOne;
+    echo "http://ogdabou.com/givemeashow/videos/".$choosenOne;
 ?>
 
 <?php

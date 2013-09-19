@@ -6,13 +6,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <title>Give me a show !</title>
+        <script type="text/javascript" src="javascript/jquery-1.10.2.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <link href="http://vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
         <script src="http://vjs.zencdn.net/4.1/video.js"></script>
         <script type="text/javascript" src="javascript/javascript.js"></script>
         <script type="text/javascript" src="javascript/keyListener.js"></script>
         <script type="text/javascript" src="javascript/annyang.js"></script>
-        <script type="text/javascript" src="javascript/haveFunWithMe.js"></script>
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
         <script type="text/javascript">
             var next = function(){
                 changeVideo();
@@ -67,9 +68,10 @@
             </table>
         </div>
 
-        <div id="footer">
+        <div class="footer">
             <div id="footer_content_area">
                 <a href="http://givemeasong.net/">Go to : Give me a song!</a>
+                <img id="footer_up_arrow" src="images/uparrow.png" onClick="expandFooter();" />
             </div>
         </div>
         <script type="text/javascript" language="javascript">
@@ -78,7 +80,7 @@
             var videosHystory = null;;
             var path = new Array();
             videoPlayer.on("ended", changeVideo);
-            videoPlayer.on("error", changeVideo);
+            //videoPlayer.on("error", changeVideo);
             changeVideo();
         </script>
     </body>
