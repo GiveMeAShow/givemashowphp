@@ -15,8 +15,11 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script type="text/javascript">
             var next = function(){
-                console.log("He said NEXT !");
                 changeVideo();
+            }
+
+            var prev = function(){
+                changeToPreviousVideo();
             }
 
             if (annyang)
@@ -24,6 +27,7 @@
                 console.log("Annyang successfully started");
                 var commands = {
                     'next': next,
+                    'bazinga' : prev,
                 };
                 annyang.debug();
                 annyang.init(commands);
