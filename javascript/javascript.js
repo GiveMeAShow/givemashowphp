@@ -18,10 +18,10 @@ function changeVideo()
             request = request + path[i] + ";";
         }
     }
-    console.log("request: ", request);
+    //console.log("request: ", request);
     xhr_object.open("GET", request, false);
     xhr_object.send();
-    console.log("response: ", xhr_object.responseText);
+    //console.log("response: ", xhr_object.responseText);
     videoPlayer.src({type: "video/webm", src: xhr_object.responseText});
     videoPlayer.currentTime(0);
     videoPlayer.ready(function(){
@@ -35,7 +35,7 @@ function changeVideo()
 
 function changeToPreviousVideo()
 {
-    if (videosHystory != null)
+    if (videosHystory != null && videosHystory.length != 0)
     {
         var previousVideo = videosHystory.pop();
         videoPlayer.src({type: "video/webm", src:  previousVideo});
@@ -54,21 +54,24 @@ function changeToPreviousVideo()
 
 function addVideoToHistory(videoPath)
 {
-    if (videosHystory == null)
+    if (videoPath != null)
     {
-        videosHystory = new Array();
-        videosHystory.push(videoPath);
+        if (videosHystory == null)
+        {
+            videosHystory = new Array();
+            videosHystory.push(videoPath);
+        }
+        else
+        {
+            videosHystory.push(videoPath);
+        }
+        //console.log("History +1 : ", videoPath);
     }
-    else
-    {
-        videosHystory.push(videoPath);
-    }
-    console.log("History +1 : ", videoPath);
 }
 
 function managePath(folderName, id) 
 {
-    console.log("entering managePath");
+    //console.log("entering managePath");
     var index = path.indexOf(folderName);
     if (index != -1)
     {
@@ -81,10 +84,10 @@ function managePath(folderName, id)
         path.push(folderName);
         document.getElementById(id).setAttribute("class", "showBox_visible");
     }
-    console.log(path);
+    //console.log(path);
 
     document.getElementById("videoTitle").innerHTML = "path as changed to " + path;
-    console.log("exiting managePath");
+    //console.log("exiting managePath");
 };
 
 function processTitle(fullpath)

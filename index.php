@@ -10,10 +10,28 @@
         <script src="http://vjs.zencdn.net/4.1/video.js"></script>
         <script type="text/javascript" src="javascript/javascript.js"></script>
         <script type="text/javascript" src="javascript/keyListener.js"></script>
-        <script type="text/javascript" src="javascript/annyang.min.js"></script>
+        <script type="text/javascript" src="javascript/annyang.js"></script>
         <script type="text/javascript" src="javascript/haveFunWithMe.js"></script>
-    </head>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script type="text/javascript">
+            var next = function(){
+                console.log("He said NEXT !");
+                changeVideo();
+            }
 
+            if (annyang)
+            {
+                console.log("Annyang successfully started");
+                var commands = {
+                    'next': next,
+                };
+                annyang.debug();
+                annyang.init(commands);
+                annyang.setLanguage('en');
+                annyang.start();
+            }
+        </script>
+    </head>
     <body>
         <div id="header">
             <div id="header_top">
@@ -58,8 +76,6 @@
             videoPlayer.on("ended", changeVideo);
             videoPlayer.on("error", changeVideo);
             changeVideo();
-            console.log("path:", path);
-            oralFun();
         </script>
     </body>
 </html>
