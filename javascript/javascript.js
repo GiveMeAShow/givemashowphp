@@ -75,7 +75,6 @@ function managePath(folderName, id)
     var index = path.indexOf(folderName);
     if (index != -1)
     {
-        // splice : Remove 1 element at <code>index</code>
         path.splice(index, 1);
         document.getElementById(id).setAttribute("class", "showBox_hidden");
     }
@@ -84,11 +83,7 @@ function managePath(folderName, id)
         path.push(folderName);
         document.getElementById(id).setAttribute("class", "showBox_visible");
     }
-    //console.log(path);
-
-    document.getElementById("videoTitle").innerHTML = "path as changed to " + path;
-    //console.log("exiting managePath");
-};
+}
 
 function processTitle(fullpath)
 {
@@ -98,16 +93,53 @@ function processTitle(fullpath)
     document.getElementById("videoTitle").innerHTML = fullVideoName;
 }
 
-function expandFooter()
+function showAbout()
+{
+    $("#about_text").show("fade", 500);
+    $("#about_help_button").attr("onClick", "hideAbout();");
+    $("#control_button").attr("onClick", "hideAbout(showControls);");
+}
+
+function hideAbout(nextFunction)
+{
+    if (nextFunction == null)
+    {
+        $("#about_text").hide("fade", 500, minimizeFooter);
+    }
+    else
+    {
+        $("#about_text").hide("fade", 500, nextFunction);
+    }
+    $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
+}
+
+function showControls()
+{
+    $("#controls_text").show("fade", 500);
+    $("#control_button").attr("onClick", "hideControls();");
+    $("#about_help_button").attr("onClick", "hideControls(showAbout);");
+}
+
+function hideControls(nextFunction)
+{
+    if (nextFunction == null)
+    {
+            $("#controls_text").hide("fade", 500, minimizeFooter);
+    }
+    else
+    {
+            $("#controls_text").hide("fade", 500, nextFunction);
+    }
+    $("#control_button").attr("onClick", "expandFooter(showControls);");
+}
+
+function expandFooter(showFunction)
 {
     console.log("Expanding footer");
-    $(".footer").switchClass("footer", "footer_expanded", 1000);
-    $("#footer_up_arrow").attr("onClick", "minimizeFooter();")
+    $(".footer").switchClass("footer", "footer_expanded", 700, showFunction);
 }
 
 function minimizeFooter()
 {
-    console.log("Minimizing footer");
-    $(".footer_expanded").switchClass("footer_expanded", "footer", 1000);
-    $("#footer_up_arrow").attr("onClick", "expandFooter();")
+    $(".footer_expanded").switchClass("footer_expanded", "footer", 700);
 }
