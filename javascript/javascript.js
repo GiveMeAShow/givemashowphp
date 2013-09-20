@@ -97,6 +97,7 @@ function showAbout()
 {
     $("#about_text").show("fade", 500);
     $("#about_help_button").attr("onClick", "hideAbout();");
+    $("#about_help_button").attr("color", "lightgray;");
     $("#control_button").attr("onClick", "hideAbout(showControls);");
 }
 
@@ -110,6 +111,7 @@ function hideAbout(nextFunction)
     {
         $("#about_text").hide("fade", 500, nextFunction);
     }
+    $("#about_help_button").attr("color", "black;");
     $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
 }
 
@@ -117,6 +119,7 @@ function showControls()
 {
     $("#controls_text").show("fade", 500);
     $("#control_button").attr("onClick", "hideControls();");
+    $("#control_button").attr("color", "lightgray;");
     $("#about_help_button").attr("onClick", "hideControls(showAbout);");
 }
 
@@ -130,6 +133,7 @@ function hideControls(nextFunction)
     {
             $("#controls_text").hide("fade", 500, nextFunction);
     }
+    $("#control_button").attr("color", "black;");
     $("#control_button").attr("onClick", "expandFooter(showControls);");
 }
 

@@ -51,10 +51,12 @@
             <table id="tabs">
                 <tr>
                     <td class="footer_tab_element" id="about_help_button" onClick="expandFooter(showAbout);">About</td>
-                    <td class="footer_tab_element" id="chat_button" onClick="expandFooter(showAbout);">Chat</td>
+                    <!-- <td class="footer_tab_element" id="chat_button" onClick="expandFooter(showAbout);">Chat</td> -->
                     <td class="footer_tab_element" id="control_button" onClick="expandFooter(showControls);">Controls</td>
                 </tr>
+                <div id="shadow_hidder"></div>
             </table>
+
             <div id="footer_content">
                 <div class="footer_text" id="about_text">
                     <table class="footer_text_area" id="about_area">
@@ -64,7 +66,6 @@
                                 <p>"Give Me A Show !" was not developed to make you less lazy but happier.</br>
                                     See the "Controls" section to see what you can do without moving your sweet ass.
                                 </p>
-
                             </td>
                             <td class="footer_speechpart">
                                 <h2>Contact</h2>
