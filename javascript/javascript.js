@@ -95,46 +95,54 @@ function processTitle(fullpath)
 
 function showAbout()
 {
+    $("#about_help_button").css("color", "lightgray");
     $("#about_text").show("fade", 500);
     $("#about_help_button").attr("onClick", "hideAbout();");
-    $("#about_help_button").attr("color", "lightgray;");
     $("#control_button").attr("onClick", "hideAbout(showControls);");
 }
 
 function hideAbout(nextFunction)
 {
+    $("#about_help_button").css("color", "black");
     if (nextFunction == null)
     {
+        resetToExpandFooter();
         $("#about_text").hide("fade", 500, minimizeFooter);
     }
     else
     {
         $("#about_text").hide("fade", 500, nextFunction);
     }
-    $("#about_help_button").attr("color", "black;");
-    $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
 }
+
+// When we minimize, we want all the tabs to expand on click.
+function resetToExpandFooter()
+{
+     $("#control_button").attr("onClick", "expandFooter(showControls);");
+}
+     $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
 
 function showControls()
 {
+    $("#control_button").css("color", "lightgray");
     $("#controls_text").show("fade", 500);
     $("#control_button").attr("onClick", "hideControls();");
-    $("#control_button").attr("color", "lightgray;");
     $("#about_help_button").attr("onClick", "hideControls(showAbout);");
 }
 
 function hideControls(nextFunction)
 {
+    $("#control_button").css("color", "black");
     if (nextFunction == null)
     {
+            resetToExpandFooter();
             $("#controls_text").hide("fade", 500, minimizeFooter);
     }
     else
     {
             $("#controls_text").hide("fade", 500, nextFunction);
     }
-    $("#control_button").attr("color", "black;");
-    $("#control_button").attr("onClick", "expandFooter(showControls);");
+
 }
 
 function expandFooter(showFunction)

@@ -51,7 +51,6 @@
             <table id="tabs">
                 <tr>
                     <td class="footer_tab_element" id="about_help_button" onClick="expandFooter(showAbout);">About</td>
-                    <!-- <td class="footer_tab_element" id="chat_button" onClick="expandFooter(showAbout);">Chat</td> -->
                     <td class="footer_tab_element" id="control_button" onClick="expandFooter(showControls);">Controls</td>
                 </tr>
                 <div id="shadow_hidder"></div>
