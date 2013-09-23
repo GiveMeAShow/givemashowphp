@@ -1,0 +1,7 @@
+<Files php/*.php>
+    Allow from all
+</Files>
+
+AddType video/webm .webm
+AddType video/ogg .ogv
+AddType video/mp4 .mp4

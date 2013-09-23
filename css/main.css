@@ -6,8 +6,11 @@
         Purpose of the stylesheet follows.
 */
 
-body { 
+body
+{ 
     background-color: #212121; 
+    margin: 0px;
+    padding: 0px;
 }
 
 a
@@ -17,26 +20,28 @@ a
 }
 
 
-#footer_content_area
+h2
 {
-
-    margin-left: auto;
-    margin-right: auto;
-    color: lightgrey;
-    width:640px;
+    margin-top: 5px;
+    text-align: center;
+    color: #fa9f00;
+    font: 30px Helvetica, Sans-Serif; 
+    margin: 0 0 10px 0; 
 }
 
 #header
 {
-    margin-top: 20px;
-    height:100px;
     background-color: #212121;
+    height: 75px;
     box-shadow: 0px 0px 5px #000;
+
 }
 
-#header_title_page
+#headerTitle
 {
     margin-left: auto;
+    height: 50px;
+    line-height: 50px;
     margin-right: auto;
     top: 20px;
     font-weight: bold;
@@ -45,12 +50,9 @@ a
     font-size: 20px;
 }
 
-#header_top{
-    height:35px;
-}
-
 #mainContent
 {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 800px;
@@ -60,15 +62,260 @@ a
 {
     width:150px;
     margin-right:10px;
+    color: lightgrey;
 }
 
-#showBox
+.showBox_visible
+{
+    opacity: 1.0;
+    margin-top: 5px;
+}
+
+.showBox_hidden
 {
     margin-top: 5px;
+    opacity: 0.5;
 }
 
 #videoPlayer
 {
     margin-left: 160px;
     width: 640px;
+}
+
+#video_playlist
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#showBox_visible
+{
+    opacity: 1.0;
+}
+
+#showBox_hidden
+{
+    opacity: 0.5;
+}
+
+#videoTitle
+{
+    color: lightgray;
+}
+
+.footer
+{
+    bottom: 0px;
+    height: 65px;
+    position: fixed;
+    width: 100%;
+    font-size: 12px;
+}
+
+.footer_expanded
+{    
+    bottom: 0px;
+    height: 210px;
+    position: fixed;
+    width: 100%;
+    font-size: 12px;
+}
+
+#footer_content
+{
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 5px #000;
+    background-color: #333333;
+    position: relative;
+    z-index: 0;
+}
+
+
+#tabs
+{
+
+    background-color: #333333;
+    box-shadow: 0px 0px 5px #000;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    height: 35px;
+    width: 240px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+#about_help_button
+{
+    width: 90px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer_speechpart
+{
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 350px;
+}
+
+.footer_text_area
+{
+    
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    color: lightgray;
+}
+
+#shadow_hidder
+{
+    background-color: #333333;
+    color: lightgray;
+    height: 10px;
+    width: 240px;
+    position: relative;
+    top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+}
+
+
+/*
+    CHAT RELATED
+*/
+
+#page-wrap                      
+{ 
+    width: 500px;
+    margin: 30px auto;
+    position: relative;
+}
+
+#chat-wrap                      
+{ 
+    border: 1px solid #eee;
+    margin: 0 0 15px 0;
+}
+
+#chat-area 
+{ 
+    height: 110px;
+    overflow: auto;
+    border: 1px solid #666;
+    padding: 20px;
+    background: white;
+}
+
+#chat-area span
+{ 
+    color: white;
+    background: #333;
+    padding: 1px 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 8px;
+    margin: 0 5px 0 0; 
+}
+
+#chat-area p                    
+{ 
+    padding: 8px 0; 
+    border-bottom: 1px solid #ccc;
+    color: darkgray;
+}
+
+#name-area                      
+{
+    top: 12px; 
+    color: white; 
+    font: bold 12px "Lucida Grande", Sans-Serif; 
+    text-align: left; 
+}   
+#name-area span                 
+{ 
+    color: #fa9f00;
+}
+
+#send-message-area p            
+{ 
+    float: left; 
+    color: white; 
+    padding-top: 15px; 
+    font-size: 14px; 
+}
+
+#send-message-area
+{
+    height: 30px;
+}
+
+#sendie                         
+{ 
+    border: 3px solid #999; 
+    width: 78%; 
+    margin-left: 50px;
+    font: 12px "Lucida Grande", Sans-Serif; 
+}
+
+#chat_discussion_area
+{
+    margin-top: 10px;
+}
+
+#your_message
+{
+    width: 110px;
+}
+
+#nickname_textarea
+{
+    width: 150px;
+    max-width: 150px;
+    height: 20px;
+    max-height: 20px;
+}
+
+#chat
+{
+    margin-top: 10px;
+    position: absolute;
+    margin-right: auto;
+    width: 100%;
+}
+
+#chat *
+{
+    padding: 0;
+}
+
+#name_chooser
+{
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#nickname_form
+{
+    margin-top: 10px;
+}
+
+#playlistMaker
+{
+
+}
+
+#pathFinder {
+    height: 70%;
+    width: 200px;
+    font-size: 12px;
+    overflow: scroll;
+    border: 1px solid #ccc;
 }
