@@ -158,6 +158,24 @@ function hidePlaylist(nextFunction)
     {
             $("#playlistMaker").hide("fade", 500, nextFunction);
     }
+=======
+    }
+}
+
+// When we minimize, we want all the tabs to expand on click.
+function resetToExpandFooter()
+{
+     $("#control_button").attr("onClick", "expandFooter(showControls);");
+}
+     $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
+
+function showControls()
+{
+    $("#control_button").css("color", "lightgray");
+    $("#controls_text").show("fade", 500);
+    $("#control_button").attr("onClick", "hideControls();");
+    $("#about_help_button").attr("onClick", "hideControls(showAbout);");
+>>>>>>> 6c05539c3d75f7f5d9a8a85949b2d042c60194d6
 }
 
 function hideControls(nextFunction)
