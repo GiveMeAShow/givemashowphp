@@ -1,7 +1,6 @@
 function changeVideo() 
 {
     addVideoToHistory(document.getElementById("videoClip_html5_api").getAttribute("src"));
-    //currentVideo = videoPlayer.src();
     var xhr_object = null;
     if (window.XMLHttpRequest) // Firefox 
         xhr_object = new XMLHttpRequest();
@@ -29,7 +28,6 @@ function changeVideo()
         vp.play();
     })
     processTitle(xhr_object.responseText);
-    //document.getElementById("videoTitle").innerHTML = xhr_object.responseText;
     return false;
 };
 
@@ -158,8 +156,6 @@ function hidePlaylist(nextFunction)
     {
             $("#playlistMaker").hide("fade", 500, nextFunction);
     }
-=======
-    }
 }
 
 // When we minimize, we want all the tabs to expand on click.
@@ -175,7 +171,6 @@ function showControls()
     $("#controls_text").show("fade", 500);
     $("#control_button").attr("onClick", "hideControls();");
     $("#about_help_button").attr("onClick", "hideControls(showAbout);");
->>>>>>> 6c05539c3d75f7f5d9a8a85949b2d042c60194d6
 }
 
 function hideControls(nextFunction)

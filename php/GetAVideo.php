@@ -4,7 +4,6 @@
     $videoList = array();
 
     $dir = opendir($dirname);
-    //echo count($_GET);
     if (count($_GET) > 0)
     {
         $folders = explode(";", $_GET['folders']);
