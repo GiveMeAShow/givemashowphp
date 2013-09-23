@@ -20,22 +20,20 @@
             <div id="titleContainer">
                 Give me a show !
             </div>
-            <table id="menuContainer">
-                <tr>
-                    <td class="menuItem" id="videoMenu">
-                        Video
-                    </td>
-                    <td class="menuItem" id="playlistMenu">
-                        Playlist
-                    </td>
-                    <td class="menuItem" id="aboutMenu">
-                        About
-                    </td>
-                    <td class="menuItem" id="controlsMenu">
-                        Controls
-                    </td>
-                </tr>
-            </table>
+            <ul id="menuContainer">
+                <li class="menuItem" id="videoMenu">
+                    Video
+                </li>
+                <li class="menuItem" id="playlistMenu">
+                    Playlist
+                </li>
+                <li class="menuItem" id="aboutMenu">
+                    About
+                </li>
+                <li class="menuItem" id="controlsMenu">
+                    Controls
+                </li>
+            </ul>
         </div>
         <div id="mainContent">
             <table id="video_playlist">

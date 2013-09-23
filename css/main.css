@@ -46,11 +46,22 @@ h2
 #menuContainer
 {
     background-color: #333333;
-    height: 35px;
+    line-height: 35px;
+    margin: 0;
     position: relative;
     text-align: center;
-    width: 100%;
     z-index: -1;
+}
+
+#menuContainer li
+{
+    display: inline;
+    list-style: none;
+}
+
+#menuBar
+{
+    max-width: 800px;
 }
 
 /*
@@ -328,4 +339,22 @@ h2
     overflow: scroll;
     width: 200px;
 
+}
+
+/*
+    MEDIA
+*/
+
+@media screen and (max-width: 1279px) {
+    #menuContainer li
+    {
+        padding: 5%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    #menuContainer li
+    {
+        padding: 110px;
+    }
 }
