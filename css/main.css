@@ -29,33 +29,46 @@ h2
     margin: 0 0 10px 0; 
 }
 
-#header
+/*
+    HEADER
+*/
+
+#titleContainer
 {
     background-color: #212121;
-    height: 75px;
     box-shadow: 0px 0px 5px #000;
-
-}
-
-#headerTitle
-{
     margin-left: auto;
     height: 50px;
     line-height: 50px;
     margin-right: auto;
     top: 20px;
+    text-align: center;
     font-weight: bold;
     color: lightgrey;
-    width: 150px;
     font-size: 20px;
+    z-index: 1;
 }
+
+#menuContainer
+{
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 35px;
+    background-color: #333333;
+    z-index: -1;
+}
+
+/*
+    MAiN CONTENT
+*/
 
 #mainContent
 {
+    box-shadow: 0 0 5px #000000;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
 }
 
 #showChooser

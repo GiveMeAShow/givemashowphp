@@ -17,11 +17,25 @@
 
     <body>
         <div id="header">
-            <div id="headerTitle">
+            <div id="titleContainer">
                 Give me a show !
             </div>
-            <div id="menuBar">
-            </div>
+            <table id="menuContainer">
+                <tr>
+                    <td class="menuItem" id="videoMenu">
+                        Video
+                    </td>
+                    <td class="menuItem" id="playlistMenu">
+                        Playlist
+                    </td>
+                    <td class="menuItem" id="aboutMenu">
+                        About
+                    </td>
+                    <td class="menuItem" id="controlsMenu">
+                        Controls
+                    </td>
+                </tr>
+            </table>
         </div>
         <div id="mainContent">
             <table id="video_playlist">
