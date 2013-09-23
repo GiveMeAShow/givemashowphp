@@ -12,7 +12,7 @@
         <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
         <script type="text/javascript" src="javascript/javascript.js"></script>
         <script type="text/javascript" src="javascript/keyListener.js"></script>
-        <script type="text/javascript" src="javascript/annyang.min.js"></script>
+        <script type="text/javascript" src="javascript/annyang.js"></script>
     </head>
 
     <body>
@@ -22,7 +22,7 @@
             </div>
             <ul id="menuContainer">
                 <li class="menuItem" id="videoMenu">
-                    Video
+                    <a href="#" onClick="showAbout2();"> Video</a>
                 </li>
                 <li class="menuItem" id="playlistMenu">
                     Playlist
@@ -57,7 +57,7 @@
                 </tr>
             </table>
         </div>
-
+<!-- 
         <div class="footer">
             <table id="tabs">
                 <tr>
@@ -125,7 +125,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> -->
         <script type="text/javascript" language="javascript">
             $(".tab_content").hide();
             $(".file_content").hide();

@@ -204,8 +204,15 @@ function revealFiles(content_id, parent_id)
     $("#" + content_id).show();
     $("#" + parent_id).attr('onClick', "hideFiles('" + content_id + "', '" + parent_id + "');");
 }
+
 function hideFiles(content_id, parent_id)
 {
     $("#" + content_id).hide();
     $("#" + parent_id).attr('onClick', "revealFiles('" + content_id + "', '" + parent_id + "');");
+}
+
+function showAbout2()
+{
+    console.log("in showAbout2");
+    //$("#showChooser").hide("fade", 200);
 }
