@@ -22,7 +22,7 @@
             </div>
             <ul id="menuContainer">
                 <li class="menuItem" id="videoMenu">
-                    <a href="#" onClick="showAbout2();"> Video</a>
+                    <a href="#" onClick="moveVideo();"> Video</a>
                 </li>
                 <li class="menuItem" id="playlistMenu">
                     Playlist
@@ -35,8 +35,8 @@
                 </li>
             </ul>
         </div>
-        <div id="mainContent">
-            <table id="video_playlist">
+        <div class="mainContent">
+            <table class="video_playlist">
                 <tr>
                     <td>
                         <div id="showChooser">

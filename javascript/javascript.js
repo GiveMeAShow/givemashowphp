@@ -91,128 +91,143 @@ function processTitle(fullpath)
     document.getElementById("videoTitle").innerHTML = fullVideoName;
 }
 
+function moveVideo()
+{
+    $(".video_playlist").hide("fade", 300, function()
+        {
+            $("#showChooser").hide();
+            $("#videoClip").css("width", "320");
+            $("#videoClip").css("height", "180");
+            $(".mainContent").switchClass("mainContent", "mainContent_side");
+        });
+        $(".video_playlist").switchClass("video_playlist", "video_playlist_side");
+        $(".video_playlist").show("fade", 400);
+        $(".video_playlist_side").show("fade", 400);
+}
+
+
 /*
     TABS
 */
-function showAbout()
-{
-    $("#about_help_button").css("color", "lightgray");
-    $("#about_text").show("fade", 500);
-    $("#about_help_button").attr("onClick", "hideAbout();");
-    $("#control_button").attr("onClick", "hideAbout(showControls);");
-    $("#playlist_button").attr("onClick", "hideAbout(showPlayList);")
-}
+// function showAbout()
+// {
+//     $("#about_help_button").css("color", "lightgray");
+//     $("#about_text").show("fade", 500);
+//     $("#about_help_button").attr("onClick", "hideAbout();");
+//     $("#control_button").attr("onClick", "hideAbout(showControls);");
+//     $("#playlist_button").attr("onClick", "hideAbout(showPlayList);")
+// }
 
-function hideAbout(nextFunction)
-{
-    $("#about_help_button").css("color", "black");
-    if (nextFunction == null)
-    {
-        resetToExpandFooter();
-        $("#about_text").hide("fade", 500, minimizeFooter);
-    }
-    else
-    {
-        $("#about_text").hide("fade", 500, nextFunction);
-    }
-}
+// function hideAbout(nextFunction)
+// {
+//     $("#about_help_button").css("color", "black");
+//     if (nextFunction == null)
+//     {
+//         resetToExpandFooter();
+//         $("#about_text").hide("fade", 500, minimizeFooter);
+//     }
+//     else
+//     {
+//         $("#about_text").hide("fade", 500, nextFunction);
+//     }
+// }
 
-// When we minimize, we want all the tabs to expand on click.
-function resetToExpandFooter()
-{
-     $("#control_button").attr("onClick", "expandFooter(showControls);");
-     $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
-     $("#playlist_button").attr("onClick", "expandFooter(showPlayList);");
-}
+// // When we minimize, we want all the tabs to expand on click.
+// function resetToExpandFooter()
+// {
+//      $("#control_button").attr("onClick", "expandFooter(showControls);");
+//      $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
+//      $("#playlist_button").attr("onClick", "expandFooter(showPlayList);");
+// }
 
-function showControls()
-{
-    $("#control_button").css("color", "lightgray");
-    $("#controls_text").show("fade", 500);
-    $("#control_button").attr("onClick", "hideControls();");
-    $("#playlist_button").attr("onClick", "hideControls(showPlayList);")
-    $("#about_help_button").attr("onClick", "hideControls(showAbout);");
-}
+// function showControls()
+// {
+//     $("#control_button").css("color", "lightgray");
+//     $("#controls_text").show("fade", 500);
+//     $("#control_button").attr("onClick", "hideControls();");
+//     $("#playlist_button").attr("onClick", "hideControls(showPlayList);")
+//     $("#about_help_button").attr("onClick", "hideControls(showAbout);");
+// }
 
-function showPlayList()
-{
-    $("#playlist_button").css("color", "lightgray");
-    $("#playlistMaker").show("fade", 500);
-    $("#pathFinder").show();
-    $("#playlist_button").attr("onClick", "hidePlaylist();");
-    $("#control_button").attr("onClick", "hidePlaylist(showControls);");
-    $("#about_help_button").attr("onClick", "hidePlaylist(showAbout);");
-}
+// function showPlayList()
+// {
+//     $("#playlist_button").css("color", "lightgray");
+//     $("#playlistMaker").show("fade", 500);
+//     $("#pathFinder").show();
+//     $("#playlist_button").attr("onClick", "hidePlaylist();");
+//     $("#control_button").attr("onClick", "hidePlaylist(showControls);");
+//     $("#about_help_button").attr("onClick", "hidePlaylist(showAbout);");
+// }
 
-function hidePlaylist(nextFunction)
-{
-    $("#playlist_button").css("color", "black");
-    if (nextFunction == null)
-    {
-            resetToExpandFooter();
-            $("#playlistMaker").hide("fade", 500, minimizeFooter);
-    }
-    else
-    {
-            $("#playlistMaker").hide("fade", 500, nextFunction);
-    }
-}
+// function hidePlaylist(nextFunction)
+// {
+//     $("#playlist_button").css("color", "black");
+//     if (nextFunction == null)
+//     {
+//             resetToExpandFooter();
+//             $("#playlistMaker").hide("fade", 500, minimizeFooter);
+//     }
+//     else
+//     {
+//             $("#playlistMaker").hide("fade", 500, nextFunction);
+//     }
+// }
 
-// When we minimize, we want all the tabs to expand on click.
-function resetToExpandFooter()
-{
-     $("#control_button").attr("onClick", "expandFooter(showControls);");
-}
-     $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
+// // When we minimize, we want all the tabs to expand on click.
+// function resetToExpandFooter()
+// {
+//      $("#control_button").attr("onClick", "expandFooter(showControls);");
+// }
+//      $("#about_help_button").attr("onClick", "expandFooter(showAbout);");
 
-function showControls()
-{
-    $("#control_button").css("color", "lightgray");
-    $("#controls_text").show("fade", 500);
-    $("#control_button").attr("onClick", "hideControls();");
-    $("#about_help_button").attr("onClick", "hideControls(showAbout);");
-}
+// function showControls()
+// {
+//     $("#control_button").css("color", "lightgray");
+//     $("#controls_text").show("fade", 500);
+//     $("#control_button").attr("onClick", "hideControls();");
+//     $("#about_help_button").attr("onClick", "hideControls(showAbout);");
+// }
 
-function hideControls(nextFunction)
-{
-    $("#control_button").css("color", "black");
-    if (nextFunction == null)
-    {
-            resetToExpandFooter();
-            $("#controls_text").hide("fade", 500, minimizeFooter);
-    }
-    else
-    {
-            $("#controls_text").hide("fade", 500, nextFunction);
-    }
+// function hideControls(nextFunction)
+// {
+//     $("#control_button").css("color", "black");
+//     if (nextFunction == null)
+//     {
+//             resetToExpandFooter();
+//             $("#controls_text").hide("fade", 500, minimizeFooter);
+//     }
+//     else
+//     {
+//             $("#controls_text").hide("fade", 500, nextFunction);
+//     }
 
-}
+// }
 
-function expandFooter(showFunction)
-{
-    console.log("Expanding footer");
-    $(".footer").switchClass("footer", "footer_expanded", 700, showFunction);
-}
+// function expandFooter(showFunction)
+// {
+//     console.log("Expanding footer");
+//     $(".footer").switchClass("footer", "footer_expanded", 700, showFunction);
+// }
 
-function minimizeFooter()
-{
-    $(".footer_expanded").switchClass("footer_expanded", "footer", 700);
-}
+// function minimizeFooter()
+// {
+//     $(".footer_expanded").switchClass("footer_expanded", "footer", 700);
+// }
 
-function revealFiles(content_id, parent_id)
-{
-    $("#" + content_id).show();
-    $("#" + parent_id).attr('onClick', "hideFiles('" + content_id + "', '" + parent_id + "');");
-}
+// function revealFiles(content_id, parent_id)
+// {
+//     $("#" + content_id).show();
+//     $("#" + parent_id).attr('onClick', "hideFiles('" + content_id + "', '" + parent_id + "');");
+// }
 
-function hideFiles(content_id, parent_id)
-{
-    $("#" + content_id).hide();
-    $("#" + parent_id).attr('onClick', "revealFiles('" + content_id + "', '" + parent_id + "');");
-}
+// function hideFiles(content_id, parent_id)
+// {
+//     $("#" + content_id).hide();
+//     $("#" + parent_id).attr('onClick', "revealFiles('" + content_id + "', '" + parent_id + "');");
+// }
 
-function showAbout2()
-{
-    console.log("in showAbout2");
-    //$("#showChooser").hide("fade", 200);
-}
+// function showAbout2()
+// {
+//     console.log("in showAbout2");
+//     //$("#showChooser").hide("fade", 200);
+// }
