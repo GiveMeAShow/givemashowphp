@@ -43,7 +43,7 @@
                         include("php/GenerateThumbs.php");
                     ?>
                 </div>
-                <div id="videoContainer">
+                <div class="videoContainer">
                     <div id="videoTitle"></div>
                         <video id="videoClip" class="video-js vjs-default-skin"
                             controls preload="auto" width="640" height="360">

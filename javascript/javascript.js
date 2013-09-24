@@ -87,6 +87,7 @@ function processTitle(fullpath)
 {
     var fullVideoName = fullpath.substring(fullpath.lastIndexOf("/") + 1);
     fullVideoName = fullVideoName.replace(".webm", "");
+    fullVideoName = fullVideoName.replace("VOSTFR", "");
     fullVideoName = fullVideoName.split("_").join(" ");
     document.getElementById("videoTitle").innerHTML = fullVideoName;
 }
@@ -99,6 +100,7 @@ function moveVideo(nextFunction)
             $("#videoClip").css("width", "320");
             $("#videoClip").css("height", "180");
             $(".mainContent").switchClass("mainContent", "mainContent_side");
+            $(".videoContainer").switchClass("videoContainer", "videoContainer_sided");
         });
         $(".video_playlist").switchClass("video_playlist", "video_playlist_side");
         $(".video_playlist").show("fade", 400);
@@ -108,8 +110,8 @@ function moveVideo(nextFunction)
 
 function showAboutText()
 {
-    $("#videoMenu").attr('onClick', 'showVideo()');
     $("#aboutContent").show(400);
+    $("#videoMenu").attr('onClick', 'showVideo()');
 }
 
 function showVideo()
@@ -119,6 +121,7 @@ function showVideo()
         $("#videoClip").css("width", "640");
         $("#videoClip").css("height", "360");
         $(".mainContent_side").switchClass("mainContent_side", "mainContent");
+        $(".videoContainer_sided").switchClass("videoContainer_sided", "videoContainer");
     });
     $(".video_playlist_side").switchClass("video_playlist_side", "video_playlist").show("fade", 400);
     $("#showChooser").show("fade", 400);
