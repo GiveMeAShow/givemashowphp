@@ -22,13 +22,13 @@
             </div>
             <ul id="menuContainer">
                 <li class="menuItem" id="videoMenu">
-                    <a href="#" onClick="moveVideo();"> Video</a>
+                    <a href="#" onClick=""> Video</a>
                 </li>
                 <li class="menuItem" id="playlistMenu">
                     Playlist
                 </li>
                 <li class="menuItem" id="aboutMenu">
-                    About
+                    <a href="#" onClick="moveVideo(showAboutText);"> About</a>
                 </li>
                 <li class="menuItem" id="controlsMenu">
                     Controls
@@ -36,99 +36,37 @@
             </ul>
         </div>
         <div class="mainContent">
-            <table class="video_playlist">
-                <tr>
-                    <td>
-                        <div id="showChooser">
-                            Choose your show.
-                            <?php 
-                                include("php/GenerateThumbs.php");
-                            ?>
-                        </div>
-                    </td>
-                    <td>
-                        <div id="videoTitle">
-                            </div>
-                            <video id="videoClip" class="video-js vjs-default-skin"
-                                   controls preload="auto" width="640" height="360">
-                            </video>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-<!-- 
-        <div class="footer">
-            <table id="tabs">
-                <tr>
-                    <td class="footer_tab_element" id="about_help_button" onClick="expandFooter(showAbout);">About</td>
-                    <td class="footer_tab_element" id="playlist_button" onClick="expandFooter(showPlayList);">PlayList</td>
-                    <td class="footer_tab_element" id="control_button" onClick="expandFooter(showControls);">Controls</td>
-                </tr>
-                <div id="shadow_hidder"></div>
-            </table>
-
-            <div id="footer_content">
-                <div class="tab_content" id="about_text">
-                    <table class="footer_text_area" id="about_area">
-                        <tr>
-                            <td class="footer_speechpart">
-                                <h2>About</h2>
-                                <p>"Give Me A Show !" was not developed to make you less lazy but happier.</br>
-                                    See the "Controls" section to see what you can do without moving your sweet ass.
-                                </p>
-                            </td>
-                            <td class="footer_speechpart">
-                                <h2>Contact</h2>
-                                <ul>
-                                    <li>Developped by Ogdabou</li>
-                                    <li>Contact us.</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
+            <div class="video_playlist">
+                <div id="showChooser">
+                    Choose your show.
+                    <?php
+                        include("php/GenerateThumbs.php");
+                    ?>
                 </div>
-
-                <div class="tab_content" id="playlistMaker">
-                    <div id="pathFinder">
-                        <?php 
-                            include("php/GenerateTree.php");
-                        ?>
-                    </div>
+                <div id="videoContainer">
+                    <div id="videoTitle"></div>
+                        <video id="videoClip" class="video-js vjs-default-skin"
+                            controls preload="auto" width="640" height="360">
+                        </video>
                 </div>
-
-                <div class="tab_content" id="controls_text">
-                    <table class="footer_text_area" id="controls_area">
-                        <tr>
-                            <td class="footer_speechpart">
-                                <h2>Keyboard</h2>
-                            </td>
-                            <td class="footer_speechpart">
-                                <h2>Voice</h2>
-                            </td> 
-                        </tr>
-                        <tr>
-                            <td class="footer_speechpart">
-                                <ul>
-                                    <li>Left Arrow : randomly change the video</li>
-                                    <li>Right Arrow : previous video</li>
-                                </ul>
-                            </td>
-                            <td class="footer_speechpart">
-                                <p>The technology is recent and only supported by Chrome.</br>
-                                    Allow the site to access to your microphone.</p>
-                                <ul>
-                                    <li>Next video: say "Next"</li>
-                                </ul>
-                            </td>
-                        </tr>
-                    </table>
+                <div id="separator"></div>
+                <div class="textContent" id="aboutContent">
+                    <h2>About</h2>
+                    <p>
+                        "Give Me A Show !" was developped to let you be lazier and happier.</br>
+                        You can find another "Give Me.." website, but about musics at : 
+                        <a href="http://givemeasong.net">Give Me A Song</a> </br>
+                        It is our very first webSite and we need your feedbacks !</br>
+                        Dev by : Ogdabou </br>
+                        Deployment by : Naixy</br>
+                    </p>
                 </div>
             </div>
-        </div> -->
+        </div>
         <script type="text/javascript" language="javascript">
             $(".tab_content").hide();
             $(".file_content").hide();
+            $(".textContent").hide();
             document.onkeydown = changeOnKeyDown;
             var videoPlayer = videojs("videoClip");
             var videosHystory = null;;
