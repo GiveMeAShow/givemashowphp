@@ -153,7 +153,7 @@ function showVideo()
 {
     aboutShown = "false";
     controlsShown = "false";
-    $("#aboutMenu").attr("onClick", "moveVideo(aboutClickHandler;");
+    $("#aboutMenu").attr("onClick", "moveVideo(aboutClickHandler);");
     $("#controlsMenu").attr("onClick", "moveVideo(controlsClickHandler);");
     $(".textContent").hide(400);
     $(".video_playlist_side").hide("fade", 300, function(){
