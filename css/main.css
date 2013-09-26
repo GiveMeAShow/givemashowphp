@@ -31,6 +31,14 @@ h2
     text-align: center; 
 }
 
+hr
+{
+    color: lightgray;
+    display: block;
+    width: 1px;
+    height: 100px;
+}
+
 #siteContent
 {
     height: 100%;
@@ -186,8 +194,9 @@ h2
     text-align: left;
     display: inline-block;
     float: left;
-    margin-left: 330px;
+    margin-left: 35%;
     width: 600px;
+    color: lightgray;
 }
 
 /*

@@ -1,3 +1,4 @@
+
 function changeVideo() 
 {
     addVideoToHistory(document.getElementById("videoClip_html5_api").getAttribute("src"));
@@ -63,7 +64,6 @@ function addVideoToHistory(videoPath)
         {
             videosHystory.push(videoPath);
         }
-        //console.log("History +1 : ", videoPath);
     }
 }
 
@@ -105,17 +105,56 @@ function moveVideo(nextFunction)
         $(".video_playlist").switchClass("video_playlist", "video_playlist_side");
         $(".video_playlist").show("fade", 400);
         $(".video_playlist_side").show("fade", 400);
+        $("#videoMenu").attr("onClick", "showVideo();");
+        $("#controlsMenu").attr("onClick", "controlsClickHandler();");
+        $("#aboutMenu").attr("onClick", "aboutClickHandler()");
         nextFunction();
 }
 
-function showAboutText()
+function aboutClickHandler()
 {
-    $("#aboutContent").show(400);
-    $("#videoMenu").attr('onClick', 'showVideo()');
+    if ((aboutShown === "true") && (controlsShown === "true"))
+    {
+        aboutShown = "false";
+        $("#aboutContent").hide("slide",{direction: "right"}, 400);    
+    }
+    else if (aboutShown === "false" && controlsShown == "true")
+    {
+        aboutShown = "true";
+        $("#aboutContent").show("slide",{direction: "right"}, 400);
+    }
+    else if (aboutShown === "false" && controlsShown == "false")
+    {
+        aboutShown = "true";
+        $("#aboutContent").show("fade", 400);
+    }
+}
+
+function controlsClickHandler()
+{
+    if ((aboutShown === "true") && (controlsShown === "true"))
+    {
+        controlsShown = "false";
+        $("#controlsContent").hide("slide",{direction: "right"}, 400);    
+    }
+    else if (controlsShown === "false" && aboutShown == "true")
+    {
+        controlsShown = "true";
+        $("#controlsContent").show("slide", {direction: "right"}, 400);
+    }
+    else if (controlsShown === "false" && aboutShown == "false")
+    {
+        controlsShown = "true";
+        $("#controlsContent").show("fade", 400);
+    }
 }
 
 function showVideo()
 {
+    aboutShown = "false";
+    controlsShown = "false";
+    $("#aboutMenu").attr("onClick", "moveVideo(aboutClickHandler;");
+    $("#controlsMenu").attr("onClick", "moveVideo(controlsClickHandler);");
     $(".textContent").hide(400);
     $(".video_playlist_side").hide("fade", 300, function(){
         $("#videoClip").css("width", "640");
