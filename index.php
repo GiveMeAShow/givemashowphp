@@ -24,9 +24,6 @@
                 <li class="menuItem" id="videoMenu">
                     <a href="#" > Video</a>
                 </li>
-                <li class="menuItem" id="playlistMenu">
-                    Playlist
-                </li>
                 <li class="menuItem" id="controlsMenu" onClick="moveVideo(controlsClickHandler);">
                     <a href="#" >Controls</a>
                 </li>
