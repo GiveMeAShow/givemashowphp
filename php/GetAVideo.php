@@ -25,7 +25,7 @@
     $choosenOne = $videoList[rand(0, count($videoList) - 1)];
     $choosenOne = str_replace("../videos/","", $choosenOne);
     $choosenOne = str_replace(" ","", $choosenOne);
-    echo "http://ogdabou.com/videos/".$choosenOne;
+    echo "videos/".$choosenOne;
 ?>
 
 <?php

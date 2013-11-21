@@ -22,6 +22,7 @@ function changeVideo()
     xhr_object.open("GET", request, false);
     xhr_object.send();
     console.log("response: ", xhr_object.responseText);
+    var src = window.location.href + xhr_object.responseText;
     videoPlayer.src({type: "video/webm", src: xhr_object.responseText});
     videoPlayer.currentTime(0);
     videoPlayer.ready(function(){
