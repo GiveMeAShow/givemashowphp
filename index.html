@@ -6,7 +6,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <link rel="stylesheet"  href="bootstrap/css/bootstrap.min.css">
-        <!--<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.min.css">-->
         <link href="http://vjs.zencdn.net/4.1/video-js.css" rel="stylesheet">
         <script src="http://vjs.zencdn.net/4.1/video.js"></script>
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
@@ -16,6 +15,25 @@
         <script type="text/javascript" src="javascript/annyang.js"></script>
         <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
         <title>Give me a show !</title>
+        <script type="text/javascript">
+            var next = function(){
+                console.log("He said NEXT !");
+                changeVideo();
+            }
+
+            if (annyang)
+            {
+                console.log("Annyang successfully started");
+                var commands = {
+                    'next': next,
+                    'previous': changeToPreviousVideo()
+                };
+                annyang.debug();
+                annyang.init(commands);
+                annyang.setLanguage('en');
+                annyang.start();
+            }
+        </script>
     </head>
 
     <body>
@@ -32,6 +50,11 @@
                     </li>
                     <li class="menuItem" id="aboutMenu" onClick="moveVideo(aboutClickHandler);">
                         <a href="#" > About</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="menuItem">
+                        <a href="http://givemeasong.net">GiveMeASong!</a>
                     </li>
                 </ul>
             </div>
@@ -59,8 +82,8 @@
                             You can find another "Give Me.." website, but about musics at : 
                             <a href="http://givemeasong.net">Give Me A Song</a> </br>
                             It is our very first webSite and we need your feedbacks !</br></br>
-                            Dev by : Ogdabou </br>
-                            Deployment by : Naixy</br>
+                            Dev stuff by Ogdabou</br>
+                            Server stuff by Naixy</br>
                         </p>
                     </div>
                     <div id="controlsContent">
@@ -86,22 +109,12 @@
                 </div>
             </div>
         </div>
-        
-        <!--
-        <div class="mainContent">
-            <!-- class video_playlist
-           
-                <div class="span4" id="separator"></div>
-                
-            </div>
-        </div>-->
-        
+
         <script type="text/javascript" language="javascript">
             $(".tab_content").hide();
             $(".file_content").hide();
             $("#aboutContent").hide();
             $("#controlsContent").hide();
-            //$(".textContent").hide();
             var aboutShown = "false";
             var controlsShown = "false";
             document.onkeydown = changeOnKeyDown;
