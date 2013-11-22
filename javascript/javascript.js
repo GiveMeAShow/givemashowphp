@@ -162,3 +162,8 @@ function showVideo()
     $(".video_playlist_side").switchClass("video_playlist_side", "video_playlist").show("fade", 400);
     $("#showChooser").show("fade", 400);
 }
+
+function removeVideoPlayerOffset()
+{
+    $("#videoClip").toggleClass("col-xs-offset-2");  
+}
