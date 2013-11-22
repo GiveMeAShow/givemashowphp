@@ -30,7 +30,6 @@
 
 <?php
     // Fill the videoList with the given folder. Also visit subdirectories.
-
     function fillVideoList($folder, $videoList)
     {
         

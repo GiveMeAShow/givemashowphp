@@ -95,17 +95,11 @@ function processTitle(fullpath)
 
 function moveVideo(nextFunction)
 {
-    $(".video_playlist").hide("fade", 300, function()
-        {
-            $("#showChooser").hide();
-            $("#videoClip").css("width", "320");
-            $("#videoClip").css("height", "180");
-            $(".mainContent").switchClass("mainContent", "mainContent_side");
-            $(".videoContainer").switchClass("videoContainer", "videoContainer_sided");
-        });
-        $(".video_playlist").switchClass("video_playlist", "video_playlist_side");
-        $(".video_playlist").show("fade", 400);
-        $(".video_playlist_side").show("fade", 400);
+        $("#videoTitle").hide();
+        $("#showChooser").hide();
+        $("#videoClip").css("width", "320");
+        $("#videoClip").css("height", "180");
+        $("#videoClip").removeClass("col-xs-offset-2");
         $("#videoMenu").attr("onClick", "showVideo();");
         $("#controlsMenu").attr("onClick", "controlsClickHandler();");
         $("#aboutMenu").attr("onClick", "aboutClickHandler()");
@@ -157,12 +151,13 @@ function showVideo()
     $("#aboutMenu").attr("onClick", "moveVideo(aboutClickHandler);");
     $("#controlsMenu").attr("onClick", "moveVideo(controlsClickHandler);");
     $(".textContent").hide(400);
-    $(".video_playlist_side").hide("fade", 300, function(){
-        $("#videoClip").css("width", "640");
-        $("#videoClip").css("height", "360");
-        $(".mainContent_side").switchClass("mainContent_side", "mainContent");
-        $(".videoContainer_sided").switchClass("videoContainer_sided", "videoContainer");
-    });
+    
+    $("#videoClip").css("width", "640");
+    $("#videoClip").css("height", "360");
+    $("#videoClip").addClass("col-xs-offset-2");
+    $(".mainContent_side").switchClass("mainContent_side", "mainContent");
+    $(".videoContainer_sided").switchClass("videoContainer_sided", "videoContainer");
+    
     $(".video_playlist_side").switchClass("video_playlist_side", "video_playlist").show("fade", 400);
     $("#showChooser").show("fade", 400);
 }
