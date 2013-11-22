@@ -51,39 +51,38 @@
                     ?>
                 </div>
                 <div class="textContent col-xs-7 col-xs-offset-1">
-                
-                </div>
-                <div class="textContent col-xs-7 col-xs-offset-1" id="aboutContent">
-                    <h3>About</h3>
-                    <hr/>
-                    <p>
-                        "Give Me A Show !" was developped to let you be lazier and happier.</br>
-                        You can find another "Give Me.." website, but about musics at : 
-                        <a href="http://givemeasong.net">Give Me A Song</a> </br>
-                        It is our very first webSite and we need your feedbacks !</br>
-                        Dev by : Ogdabou </br>
-                        Deployment by : Naixy</br>
-                    </p>
-                </div>
-                <div class="textContent col-xs-7 col-xs-offset-1" id="controlsContent">
-                    <h3>Controls</h3>
-                    <hr/>
-                    <h4>Keyboard</h4>
-                    <ul>
-                        <li>Left arrow : change to previous video.</li>
-                        <li>Right arrow : random the next video.</li>
-                    </ul>
-                    <h4>Voice</h4>
-                    <p>
-                        We use a recent API which is only (for the moment) supported by Chrome. It cannot be used on Firefox. We will implement the thing on Firefox as soon as there is something available.</br>
-                    </p>
-                    <p>
-                        We will work on a full voice-controlled website by the future.
-                        Feel free to send us feedbacks and ideas.
-                    </p>
-                    <ul>
-                        <li>"next" : random to the next video.</li>    
-                    </ul>
+                    <div id="aboutContent">
+                        <h3>About</h3>
+                        <hr/>
+                        <p>
+                            "Give Me A Show !" was developped to let you be lazier and happier.</br>
+                            You can find another "Give Me.." website, but about musics at : 
+                            <a href="http://givemeasong.net">Give Me A Song</a> </br>
+                            It is our very first webSite and we need your feedbacks !</br></br>
+                            Dev by : Ogdabou </br>
+                            Deployment by : Naixy</br>
+                        </p>
+                    </div>
+                    <div id="controlsContent">
+                        <h3>Controls</h3>
+                        <hr/>
+                        <h4>Keyboard</h4>
+                        <ul>
+                            <li>Left arrow : change to previous video.</li>
+                            <li>Right arrow : random the next video.</li>
+                        </ul>
+                        <h4>Voice</h4>
+                        <p>
+                            We use a recent API which is only (for the moment) supported by Chrome. It cannot be used on Firefox. We will implement the thing on Firefox as soon as there is something available.</br>
+                        </p>
+                        <p>
+                            We will work on a full voice-controlled website by the future.
+                            Feel free to send us feedbacks and ideas.
+                        </p>
+                        <ul>
+                            <li>"next" : random to the next video.</li>    
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,7 +99,9 @@
         <script type="text/javascript" language="javascript">
             $(".tab_content").hide();
             $(".file_content").hide();
-            $(".textContent").hide();
+            $("#aboutContent").hide();
+            $("#controlsContent").hide();
+            //$(".textContent").hide();
             var aboutShown = "false";
             var controlsShown = "false";
             document.onkeydown = changeOnKeyDown;

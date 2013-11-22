@@ -111,17 +111,17 @@ function aboutClickHandler()
     if ((aboutShown === "true") && (controlsShown === "true"))
     {
         aboutShown = "false";
-        $("#aboutContent").hide("slide",{direction: "right"}, 400);    
+        $("#aboutContent").hide("slide", {direction: "right"}, 400);    
     }
     else if (aboutShown === "false" && controlsShown == "true")
     {
         aboutShown = "true";
-        $("#aboutContent").show("slide",{direction: "right"}, 400);
+        $("#aboutContent").show("slide", {direction: "right"}, 400);
     }
     else if (aboutShown === "false" && controlsShown == "false")
     {
         aboutShown = "true";
-        $("#aboutContent").show("fade", 400);
+        $("#aboutContent").show("slide", {direction: "right"}, 400);
     }
 }
 
@@ -130,7 +130,7 @@ function controlsClickHandler()
     if ((aboutShown === "true") && (controlsShown === "true"))
     {
         controlsShown = "false";
-        $("#controlsContent").hide("slide",{direction: "right"}, 400);    
+        $("#controlsContent").hide("slide", {direction: "right"}, 400);    
     }
     else if (controlsShown === "false" && aboutShown == "true")
     {
@@ -140,7 +140,7 @@ function controlsClickHandler()
     else if (controlsShown === "false" && aboutShown == "false")
     {
         controlsShown = "true";
-        $("#controlsContent").show("fade", 400);
+        $("#controlsContent").show("slide", {direction: "right"}, 400);
     }
 }
 
@@ -150,7 +150,8 @@ function showVideo()
     controlsShown = "false";
     $("#aboutMenu").attr("onClick", "moveVideo(aboutClickHandler);");
     $("#controlsMenu").attr("onClick", "moveVideo(controlsClickHandler);");
-    $(".textContent").hide(400);
+    $("#controlsContent").hide(400);
+    $("#aboutContent").hide(400);
     
     $("#videoClip").css("width", "640");
     $("#videoClip").css("height", "360");
