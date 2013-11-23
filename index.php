@@ -111,6 +111,8 @@
                         <ul>
                             <li>"next" : random to the next video.</li>
                             <li>"previous" : go to the previous video.</li>
+                            <li>"up" : up the volume by 10%</li>
+                            <li>"down" : down the volume by 10%</li>
                         </ul>
                     </div>
                 </div>
