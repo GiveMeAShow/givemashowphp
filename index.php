@@ -84,7 +84,7 @@
                             "Give Me A Show !" was developped to let you be lazier and happier.</br>
                             You can find another "Give Me.." website, but about musics at : 
                             <a href="http://givemeasong.net">Give Me A Song</a> </br>
-                            It is our very first webSite and we need your feedbacks !</br></br>
+                            It is our very first webSite and we need your feedbacks ! Contact us at : ogdabou@gmail.com.</br></br>
                             Dev stuff by Ogdabou</br>
                             Server stuff by Naixy</br>
                         </p>
