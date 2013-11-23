@@ -26,7 +26,9 @@
                 console.log("Annyang successfully started");
                 var commands = {
                     'next': next,
-                    'previous': changeToPreviousVideo
+                    'previous': changeToPreviousVideo,
+                    'up' : updVolumeByTen,
+                    'down' : downVolumeByTen
                 };
                 annyang.debug();
                 annyang.init(commands);

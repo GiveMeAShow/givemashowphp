@@ -175,3 +175,13 @@ function removeVideoPlayerOffset()
         $("#videoClip").addClass("col-xs-offset-2");  
     }
 }
+
+function updVolumeByTen
+{
+    $("#videoClip").volume($("#videoClip").volume() + 0.1);
+}
+
+function downVolumeByTen
+{
+   $("#videoClip").volume($("#videoClip").volume() - 0.1); 
+}
