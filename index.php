@@ -132,7 +132,7 @@
             var path = new Array();
             videoPlayer.on("ended", changeVideo);
             videoPlayer.on("fullscreenchange", removeVideoPlayerOffset);
-//            /videoPlayer.on("error", changeVideo);
+            videoPlayer.on("error", changeVideo);
             changeVideo();
             console.log("path:", path);
         </script>
