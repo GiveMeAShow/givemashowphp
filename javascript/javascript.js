@@ -176,12 +176,12 @@ function removeVideoPlayerOffset()
     }
 }
 
-function updVolumeByTen
+function updVolumeByTen()
 {
     $("#videoClip").volume($("#videoClip").volume() + 0.1);
 }
 
-function downVolumeByTen
+function downVolumeByTen()
 {
    $("#videoClip").volume($("#videoClip").volume() - 0.1); 
 }
