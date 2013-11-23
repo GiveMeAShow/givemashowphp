@@ -165,5 +165,13 @@ function showVideo()
 
 function removeVideoPlayerOffset()
 {
-    $("#videoClip").toggleClass("col-xs-offset-2");  
+    console.log($("#videoClip").hasClass("vjs-fullscreen"));
+    if ($("#videoClip").hasClass("vjs-fullscreen"))
+    {
+          $("#videoClip").removeClass("col-xs-offset-2"); 
+    }
+    else
+    {
+        $("#videoClip").addClass("col-xs-offset-2");  
+    }
 }
