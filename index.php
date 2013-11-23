@@ -68,10 +68,13 @@
                     controls preload="auto" width="640px" height="360px">
                 </video>
                 <div id="showChooser" class="col-xs-2">
-                    Choose your show.
-                    <?php
-                            include("php/GenerateThumbs.php");
-                    ?>
+                    <div id="showChooserTitle"><h5>Choose your show.</h5></div>
+                    <hr/>
+                    <div id="showList">
+                        <?php
+                                include("php/GenerateThumbs.php");
+                        ?>
+                    </div>
                 </div>
                 <div class="textContent col-xs-7 col-xs-offset-1">
                     <div id="aboutContent">
@@ -96,7 +99,8 @@
                         </ul>
                         <h4>Voice</h4>
                         <p>
-                            We use a recent API which is only (for the moment) supported by Chrome. It cannot be used on Firefox. We will implement the thing on Firefox as soon as there is something available.</br>
+                            We use a recent API which is only (for the moment) supported by Chrome. It cannot be used on Firefox. We will implement the 
+                            thing on Firefox as soon as there is something available.</br>
                         </p>
                         <p>
                             We will work on a full voice-controlled website by the future.

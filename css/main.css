@@ -2,6 +2,7 @@
 {   
     transition-duration: 0.300s;
 }
+
 .mainContent
 {
     padding: 70px;
@@ -18,3 +19,30 @@
     margin-top: 5px;
     opacity: 0.5;
 }
+
+#showChooserTitle
+{
+    color:lightgray;
+    height:3px;
+    line-height:15px;
+
+}
+
+#showList{
+
+    overflow-y:scroll;
+    height:290px;
+    width:98%;
+    border-color:lightgray;
+    border-left: 1px solid;
+}
+
+#showChooser
+{
+    vertical-align:middle;
+    background-color:black;
+    height:360px;
+    display:table-cell;
+    text-align:center;
+}
+    
